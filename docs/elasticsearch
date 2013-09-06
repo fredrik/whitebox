@@ -2,3 +2,9 @@ python libraries:
 https://github.com/rhec/pyelasticsearch + http://pyelasticsearch.readthedocs.org/en/latest/
 https://github.com/aparo/pyes/ + http://pyes.readthedocs.org/en/latest/
 https://github.com/eriky/ESClient
+
+head plugin:
+http://mobz.github.io/elasticsearch-head/
+
+sense chrome extension:
+https://github.com/bleskes/sense + https://chrome.google.com/webstore/detail/sense/doinijnbnggojdlcjifpdckfokbbfpbo
