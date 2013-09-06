@@ -1,0 +1,8 @@
+oauthlib==0.5.1
+pyelasticsearch==0.6
+requests==1.2.3
+requests-oauthlib==0.3.2
+simplejson==3.3.0
+six==1.4.1
+twython==3.0.0
+wsgiref==0.1.2
