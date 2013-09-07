@@ -1,4 +1,6 @@
 import json
+import hashlib
+
 import requests
 from pyelasticsearch import ElasticSearch
 
@@ -23,7 +25,9 @@ if __name__ == '__main__':
 	stream = data['data']
 	assert len(stream) > 0
 
+	md5_of_token = hashlib.md5(access_token).hexdigest()
 	for post in stream:
+		post['fb'] = md5_of_token
 		es.index(index_name, 'facebook', post)
 
 	print 'indexing: done.'
