@@ -77,4 +77,8 @@ def process_user_timeline(screen_name):
 
 
 if __name__ == '__main__':
-	process_user_timeline('mollerstrand')
+	if not len(sys.argv) == 2:
+		print 'usage: {} <screen_name>'.format(sys.argv[0])
+		sys.exit(1)
+	screen_name = sys.argv[1]
+	process_user_timeline(screen_name)
