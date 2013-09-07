@@ -8,7 +8,7 @@ from pyelasticsearch import ElasticSearch
 access_token = 'CAAGTx1WBwzUBADXYe5YeMYXzyGg5P6P88tSi6kZCYZCx1I7F1auU54hZBSBBlZBiz9IQJrOFxJdAMvVhbQGdisbDdNcNc4U62hBCojSEWPS3NphAaeqv9cI7zHtiHkZCD1dcBQqLNhjEZC5pspM8fjIfqoNkiajfiAEMQs2pPxk20TpdiVx9ZAT'
 
 ES = 'http://localhost:9200/'
-index_name = 'facebook_christos'
+index_name = 'feed'
 
 
 

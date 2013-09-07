@@ -29,7 +29,7 @@ class TweetEater(object):
 	# TODO: make robust, catch ES exceptions, etc
 	def __init__(self, screen_name):
 		self.screen_name = screen_name
-		self.index = 'tweets_{}'.format(screen_name)
+		self.index = 'feed'
 		self.type = 'tweet'
 		self.es = ElasticSearch(ES)
 		self.ingestion_count = 0
