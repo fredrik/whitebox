@@ -42,6 +42,7 @@ class TweetEater(object):
 		"""Take a raw tweet dict and turn it into an indexable entity."""
 		processed_tweet = {
 			'id': tweet['id'],
+			'screen_name': self.screen_name,
 			'raw': tweet,
 			'processed_at': datetime.utcnow(),
 		}
