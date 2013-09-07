@@ -1,11 +1,10 @@
+import sys
 import json
 import hashlib
 
 import requests
 from pyelasticsearch import ElasticSearch
 
-
-access_token = 'CAAGTx1WBwzUBADXYe5YeMYXzyGg5P6P88tSi6kZCYZCx1I7F1auU54hZBSBBlZBiz9IQJrOFxJdAMvVhbQGdisbDdNcNc4U62hBCojSEWPS3NphAaeqv9cI7zHtiHkZCD1dcBQqLNhjEZC5pspM8fjIfqoNkiajfiAEMQs2pPxk20TpdiVx9ZAT'
 
 ES = 'http://localhost:9200/'
 index_name = 'feed'
@@ -14,6 +13,15 @@ index_name = 'feed'
 
 # hacks ahoy!
 if __name__ == '__main__':
+
+	if not len(sys.argv) == 2:
+		print 'usage: {} <access_token>'.format(sys.argv[0])
+		sys.exit(1)
+
+	access_token = sys.argv[1]
+	md5_of_token = hashlib.md5(access_token).hexdigest()
+	print 'access_token:', access_token
+
 	es = ElasticSearch(ES)
 
 	print 'hello facebook'
@@ -25,7 +33,6 @@ if __name__ == '__main__':
 	stream = data['data']
 	assert len(stream) > 0
 
-	md5_of_token = hashlib.md5(access_token).hexdigest()
 	for post in stream:
 		post['fb'] = md5_of_token
 		es.index(index_name, 'facebook', post)
